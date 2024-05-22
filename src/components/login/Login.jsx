@@ -35,15 +35,15 @@ const Login = () => {
 
     // VALIDATE INPUTS
     if (!username || !email || !password)
-      return toast.warn("Please enter inputs!");
-    if (!avatar.file) return toast.warn("Please upload an avatar!");
+      return toast.warn("Не пропускайте ячейки!");
+    if (!avatar.file) return toast.warn("Пожалуйста, загрузите аватар!");
 
     // VALIDATE UNIQUE USERNAME
     const usersRef = collection(db, "users");
     const q = query(usersRef, where("username", "==", username));
     const querySnapshot = await getDocs(q);
     if (!querySnapshot.empty) {
-      return toast.warn("Select another username");
+      return toast.warn("Выберите другой никнейм");
     }
 
     try {
@@ -63,7 +63,7 @@ const Login = () => {
         chats: [],
       });
 
-      toast.success("Account created! You can login now!");
+      toast.success("Аккаунт создан! Теперь вы можете войти!");
     } catch (err) {
       console.log(err);
       toast.error(err.message);
@@ -94,18 +94,18 @@ const Login = () => {
       <div className="item">
         <h2>Welcome back,</h2>
         <form onSubmit={handleLogin}>
-          <input type="text" placeholder="Email" name="email" />
-          <input type="password" placeholder="Password" name="password" />
-          <button disabled={loading}>{loading ? "Loading" : "Sign In"}</button>
+          <input type="text" placeholder="Почта" name="email" />
+          <input type="password" placeholder="Пароль" name="password" />
+          <button disabled={loading}>{loading ? "Загрузка" : "Войти"}</button>
         </form>
       </div>
       <div className="separator"></div>
       <div className="item">
-        <h2>Create an Account</h2>
+        <h2>Регистрация</h2>
         <form onSubmit={handleRegister}>
           <label htmlFor="file">
             <img src={avatar.url || "./avatar.png"} alt="" />
-            Upload an image
+            Загрузите аватар
           </label>
           <input
             type="file"
@@ -113,10 +113,10 @@ const Login = () => {
             style={{ display: "none" }}
             onChange={handleAvatar}
           />
-          <input type="text" placeholder="Username" name="username" />
-          <input type="text" placeholder="Email" name="email" />
-          <input type="password" placeholder="Password" name="password" />
-          <button disabled={loading}>{loading ? "Loading" : "Sign Up"}</button>
+          <input type="text" placeholder="Никнейм" name="username" />
+          <input type="text" placeholder="Почта" name="email" />
+          <input type="password" placeholder="Пароль" name="password" />
+          <button disabled={loading}>{loading ? "Загрузка" : "Зарегистрироваться"}</button>
         </form>
       </div>
     </div>

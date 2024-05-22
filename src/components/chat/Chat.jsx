@@ -123,7 +123,7 @@ const Chat = () => {
           <img src={user?.avatar || "./avatar.png"} alt="" />
           <div className="texts">
             <span>{user?.username}</span>
-            <p>Lorem ipsum dolor, sit amet.</p>
+            <p>Описание...</p>
           </div>
         </div>
         <div className="icons">
@@ -174,8 +174,8 @@ const Chat = () => {
           type="text"
           placeholder={
             isCurrentUserBlocked || isReceiverBlocked
-              ? "You cannot send a message"
-              : "Type a message..."
+              ? "Вы не отправляли сообщения"
+              : "Отправьте сообщение..."
           }
           value={text}
           onChange={(e) => setText(e.target.value)}
@@ -196,7 +196,7 @@ const Chat = () => {
           onClick={handleSend}
           disabled={isCurrentUserBlocked || isReceiverBlocked}
         >
-          Send
+          <img src="./send.png"/>
         </button>
       </div>
     </div>

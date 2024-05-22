@@ -34,70 +34,34 @@ const Detail = () => {
       <div className="user">
         <img src={user?.avatar || "./avatar.png"} alt="" />
         <h2>{user?.username}</h2>
-        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Описание...</p>
       </div>
       <div className="info">
         <div className="option">
           <div className="title">
-            <span>Chat Settings</span>
+            <span>Настройки чата</span>
             <img src="./arrowUp.png" alt="" />
           </div>
         </div>
         <div className="option">
           <div className="title">
-            <span>Chat Settings</span>
+            <span>Безопасность</span>
             <img src="./arrowUp.png" alt="" />
           </div>
         </div>
         <div className="option">
           <div className="title">
-            <span>Privacy & help</span>
-            <img src="./arrowUp.png" alt="" />
-          </div>
-        </div>
-        <div className="option">
-          <div className="title">
-            <span>Shared photos</span>
+            <span>Отправленные фото</span>
             <img src="./arrowDown.png" alt="" />
           </div>
           <div className="photos">
             <div className="photoItem">
               <div className="photoDetail">
                 <img
-                  src="https://images.pexels.com/photos/7381200/pexels-photo-7381200.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                  src="https://images.unsplash.com/photo-1531804055935-76f44d7c3621?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
                 />
-                <span>photo_2024_2.png</span>
-              </div>
-              <img src="./download.png" alt="" className="icon" />
-            </div>
-            <div className="photoItem">
-              <div className="photoDetail">
-                <img
-                  src="https://images.pexels.com/photos/7381200/pexels-photo-7381200.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
-                  alt=""
-                />
-                <span>photo_2024_2.png</span>
-              </div>
-              <img src="./download.png" alt="" className="icon" />
-            </div>
-            <div className="photoItem">
-              <div className="photoDetail">
-                <img
-                  src="https://images.pexels.com/photos/7381200/pexels-photo-7381200.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
-                  alt=""
-                />
-                <span>photo_2024_2.png</span>
-              </div>
-              <img src="./download.png" alt="" className="icon" />
-            </div>
-            <div className="photoItem">
-              <div className="photoDetail">
-                <img
-                  src="https://images.pexels.com/photos/7381200/pexels-photo-7381200.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
-                  alt=""
-                />
-                <span>photo_2024_2.png</span>
+                <span>photo_2024.png</span>
               </div>
               <img src="./download.png" alt="" className="icon" />
             </div>
@@ -105,19 +69,19 @@ const Detail = () => {
         </div>
         <div className="option">
           <div className="title">
-            <span>Shared Files</span>
+            <span>Отправленные файлы</span>
             <img src="./arrowUp.png" alt="" />
           </div>
         </div>
         <button onClick={handleBlock}>
           {isCurrentUserBlocked
-            ? "You are Blocked!"
+            ? "Вы заблокированы!"
             : isReceiverBlocked
-            ? "User blocked"
-            : "Block User"}
+            ? "Пользователь заблокирован"
+            : "Заблокировать"}
         </button>
         <button className="logout" onClick={handleLogout}>
-          Logout
+          Выйти
         </button>
       </div>
     </div>

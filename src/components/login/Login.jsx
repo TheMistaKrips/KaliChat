@@ -91,8 +91,10 @@ const Login = () => {
 
   return (
     <div className="login">
+      
       <div className="item">
-        <h2>Welcome back,</h2>
+      {/* <img src="./favicon.jpg" className="icons" /> */}
+        <h2>Добро пожаловать в #Калининдвор!</h2>
         <form onSubmit={handleLogin}>
           <input type="text" placeholder="Почта" name="email" />
           <input type="password" placeholder="Пароль" name="password" />
